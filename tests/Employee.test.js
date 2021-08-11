@@ -1,23 +1,34 @@
-const { it, expect } = require("@jest/globals");
-const { describe } = require("yargs");
 const Employee = require("../lib/Employee.js");
 
 describe("Employee", () => {
-    describe("Initialization", () => {
-      it("should create an object with 'name', 'Id' number, and 'email' ", () => {
-        const employee = new Employee("Derek", 412, "blah@email.com");
-  
-        // Verify that the new object has the correct properties
-        //expect(employee).toEqual({ Employee: [], name:"Derek" , id:412, email:"blah@email.com" });
-        expect(employee.name).toEqual("Derek");
-        expect(employee.id).toEqual(412);
-        expect(employee.email).toEqual("blah@email.com");
-      });
-
+  const employee = new Employee("Derek", 412, "blah@email.com");
+  describe("Initialization", () => {
+    it("should create an object with 'name', 'Id' number, and 'email' ", () => {
+      // Verify that the new object has the correct properties
+      expect(employee.name).toEqual("Derek");
+      expect(employee.id).toEqual(412);
+      expect(employee.email).toEqual("blah@email.com");
     });
-    describe("GetName", () => {
-        it("should return the employees name") , () => {
-            expect(
-    })
 
+  });
+  describe("getName", () => {
+    it("should return the employee's nme", () => {
+      expect(employee.getname()).toEqual(employee.name);
+    });
+  });
+  describe("getId", () => {
+    it("should return the employee's Id", () => {
+      expect(employee.getId()).toEqual(employee.id);
+    });
+  });
+  describe("getEmail", () => {
+    it("should return the employee's email", () => {
+      expect(employee.getEmail()).toEqual(employee.email);
+    });
+  });
+  describe("getRole", () => {
+    it("should return the employee's role", () => {
+      expect(employee.getRole()).toEqual("Employee");
+    });
+  });
 });

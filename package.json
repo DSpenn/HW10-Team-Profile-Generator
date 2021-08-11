@@ -1,5 +1,5 @@
 {
-  "name": "hw10-tpb",
+  "name": "HW10-Team-Profile-Generator",
   "version": "1.0.0",
   "description": "## Your Task",
   "main": "index.js",
@@ -7,14 +7,23 @@
     "lib": "lib",
     "test": "tests"
   },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DSpenn/HW10-Team-Profile-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DSpenn/HW10-Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/DSpenn/HW10-Team-Profile-Generator#readme",
   "dependencies": {
     "inquirer": "^8.1.2",
     "jest": "^27.0.6"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "jest"
-  },
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {}
 }
