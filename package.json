@@ -1,0 +1,20 @@
+{
+  "name": "hw10-tpb",
+  "version": "1.0.0",
+  "description": "## Your Task",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "dependencies": {
+    "inquirer": "^8.1.2",
+    "jest": "^27.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
