@@ -5,7 +5,6 @@ var answersArray = [];
 var cardsArray = [];
 var htmlTemplate;
 
-
 const menu = [
     {
         type: 'list',
@@ -59,16 +58,14 @@ const questions = [ //questions list for input
 
 function init() {
     mainMenu();
-    fs.readFile("src/index.html", "UTF8", function(err, data) { // read file now reading later caused issues. 
+    fs.readFile("src/index.html", "utf8", function(err, data) { // read file now reading later caused issues. 
         if (err) { throw err };
         htmlTemplate = data;
-        //console.log(htmlTemplate);
     });
 }
 
 function mainMenu() {
         inquirer.prompt(menu).then((menuAnswers) => {
-        //console.log("choice ", menuAnswers.menuChoice);
         if (menuAnswers.menuChoice==='Exit') process.exit();
         if (menuAnswers.menuChoice==='Add Employee') mainQuestions();
         if (menuAnswers.menuChoice==='Generate HTML') genHMTL(answersArray);
@@ -85,14 +82,11 @@ function mainQuestions() {
 }
 
 function genHMTL() {
-
-    //console.log("answersArray", answersArray);
-
     var newHTML;
     var typeBasedCardText;
+
     for(var x=0; x < answersArray.length; x++) 
     {
-        //console.log("answers array", x , " ", answersArray[x]);
         console.log("answersArray type ", x, " ", answersArray[x].type);
         switch (answersArray[x].type)
         {
@@ -116,37 +110,27 @@ let card = (
     </div>
     <div class="card-body">
             <p class="card-text">ID: ${answersArray[x].id} </p>
-            <p class="card-text">Email: <a href="${answersArray[x].email}">${answersArray[x].email}</a>  </p>
+            <p class="card-text">Email: <a href="mailto: ${answersArray[x].email}">${answersArray[x].email}</a></p>
             <p class="card-text">${typeBasedCardText}</p>
     </div></div>`);
-
-//            <p class="card-text">${answersArray[x].school} ${answersArray[x].officeNumber} <a>${answersArray[x].github}</a> </p>
-        //cardsArray.push(card);
-        //newHTML = newHTML + card;
         cardsArray.push(card);
     }
     //console.log("new html", newHTML);
     //console.log(htmlTemplate + newHTML);
-
     //console.log("cards Array ", cardsArray);
     //console.log("html Template ", htmlTemplate);
 
+    cardsArray.forEach(element => { newHTML += element}); 
     const closingHTML = (`</div></body></html>`);
 
-    cardsArray.forEach(element => { newHTML += element});
-
-    var finalHTML = htmlTemplate.concat(newHTML, closingHTML);
+    var finalHTML = htmlTemplate + newHTML + closingHTML; //combine the template, with the cards/people, and the closing html
     console.log(finalHTML);
 
     try {
-        const data = fs.writeFileSync('dist/index.html', finalHTML)
+        fs.writeFileSync('dist/index.html', finalHTML)
     } catch (err) {
         console.error(err)
     }
-
-//    answersArray.forEach(person => {
-      //  console.log("person", person);
-    //});
 }
 
 init();
