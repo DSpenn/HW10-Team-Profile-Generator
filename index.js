@@ -1,6 +1,18 @@
 const inquirer = require('inquirer');  //import inquier
 const fs = require('fs');           //import fs
 
+var answersArray = [];
+
+const menu = [
+    {
+        type: 'list',
+        message: 'Main Menu',
+        name: 'menuChoice',
+        choices: ['Add Employee', 'Generate HTML', 'Exit'],
+    },
+];
+
+
 const questions = [ //questions list for input
     {
         type: 'input',
@@ -44,9 +56,36 @@ const questions = [ //questions list for input
 ];
 
 function init() {
+    mainMenu();
+}
+
+function mainMenu() {
+        inquirer.prompt(menu).then((menuAnswers) => {
+        console.log("choice ", menuAnswers.menuChoice);
+        if (menuAnswers.menuChoice==='Exit') process.exit();
+        if (menuAnswers.menuChoice==='Add Employee') mainQuestions();
+        if (menuAnswers.menuChoice==='Generate HTML') genHMTL(answersArray);
+    });
+}
+
+function mainQuestions() {
     inquirer.prompt(questions).then((answers) => {
-        console.log(JSON.stringify(answers, null, '  '));
-        console.log(answers);
+        //console.log(JSON.stringify(answers, null, '  '));
+        //console.log(answers);
+        answersArray.push(answers);
+        mainMenu();
+    });
+}
+
+function genHMTL() {
+    //console.log("answersArray", answersArray);
+    for(var x=0; x < answersArray.length; x++) {
+        //console.log("answers array", x , " ", answersArray[x]);
+        console.log("answersArray", x, " ", answersArray[x].type);
+    }
+
+    answersArray.forEach(person => {
+        console.log("person", person);
         
     });
 }
