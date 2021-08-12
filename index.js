@@ -1,7 +1,11 @@
 const inquirer = require('inquirer');  //import inquier
 const fs = require('fs');           //import fs
 
+
 var answersArray = [];
+var cardsArray = [];
+var htmlTemplate;
+const closingHTML = ('</div></body></html>');
 
 const menu = [
     {
@@ -11,7 +15,6 @@ const menu = [
         choices: ['Add Employee', 'Generate HTML', 'Exit'],
     },
 ];
-
 
 const questions = [ //questions list for input
     {
@@ -57,11 +60,16 @@ const questions = [ //questions list for input
 
 function init() {
     mainMenu();
+    fs.readFile("src/index.html", "UTF8", function(err, data) { // read file now reading later caused issues. 
+        if (err) { throw err };
+        htmlTemplate = data;
+        //console.log(htmlTemplate);
+    });
 }
 
 function mainMenu() {
         inquirer.prompt(menu).then((menuAnswers) => {
-        console.log("choice ", menuAnswers.menuChoice);
+        //console.log("choice ", menuAnswers.menuChoice);
         if (menuAnswers.menuChoice==='Exit') process.exit();
         if (menuAnswers.menuChoice==='Add Employee') mainQuestions();
         if (menuAnswers.menuChoice==='Generate HTML') genHMTL(answersArray);
@@ -78,16 +86,48 @@ function mainQuestions() {
 }
 
 function genHMTL() {
-    //console.log("answersArray", answersArray);
-    for(var x=0; x < answersArray.length; x++) {
-        //console.log("answers array", x , " ", answersArray[x]);
-        console.log("answersArray", x, " ", answersArray[x].type);
-    }
 
-    answersArray.forEach(person => {
-        console.log("person", person);
-        
-    });
+    //console.log("answersArray", answersArray);
+    var newHTML;
+    for(var x=0; x < answersArray.length; x++) 
+    {
+        //console.log("answers array", x , " ", answersArray[x]);
+        //console.log("answersArray", x, " ", answersArray[x].type);
+
+        let card = (`<div class="card">
+        <div class="card-header bg-transparent border-success">
+            <h5 class="card-title">${answersArray[x].name}</h5>
+            <h5 class="card-text">${answersArray[x].type}</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">ID: ${answersArray[x].id} </p>
+            <p class="card-text">Email: <a>${answersArray[x].email} </p>
+            <p class="card-text">${answersArray[x].school} ${answersArray[x].officeNumber} <a>${answersArray[x].github}</a> </p>
+        </div>
+        </div>`);
+        //cardsArray.push(card);
+        newHTML = newHTML + card;
+        cardsArray.push(card);
+    }
+    //console.log("new html", newHTML);
+    //console.log(htmlTemplate + newHTML);
+    var finalHTML = htmlTemplate + newHTML + closingHTML;
+    //
+    console.log(finalHTML);
+
+    //console.log("cards Array ", cardsArray);
+    //console.log("html Template ", htmlTemplate);
+
+
+        try {
+        const data = fs.writeFileSync('dist/index.html', finalHTML)
+        } catch (err) {
+        console.error(err)
+        }
+
+//    answersArray.forEach(person => {
+      //  console.log("person", person);
+    //});
 }
 
 init();
