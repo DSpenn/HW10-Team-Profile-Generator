@@ -1,11 +1,10 @@
 const inquirer = require('inquirer');  //import inquier
 const fs = require('fs');           //import fs
 
-
 var answersArray = [];
 var cardsArray = [];
 var htmlTemplate;
-const closingHTML = ('</div></body></html>');
+
 
 const menu = [
     {
@@ -88,42 +87,62 @@ function mainQuestions() {
 function genHMTL() {
 
     //console.log("answersArray", answersArray);
+
     var newHTML;
+    var typeBasedCardText;
     for(var x=0; x < answersArray.length; x++) 
     {
         //console.log("answers array", x , " ", answersArray[x]);
-        //console.log("answersArray", x, " ", answersArray[x].type);
+        console.log("answersArray type ", x, " ", answersArray[x].type);
+        switch (answersArray[x].type)
+        {
+            case "Engineer":
+                typeBasedCardText = (`GitHub: <a href="${answersArray[x].github}">${answersArray[x].github}</a>`);
+                break;
+            case "Intern":
+                typeBasedCardText = (`School:${answersArray[x].school}`);
+                break;
+            case "Manager":
+                typeBasedCardText = (`Office Number:${answersArray[x].officeNumber}`);
+            break;
+            }
+            console.log("typeBasedCardText", typeBasedCardText);
 
-        let card = (`<div class="card">
-        <div class="card-header bg-transparent border-success">
-            <h5 class="card-title">${answersArray[x].name}</h5>
-            <h5 class="card-text">${answersArray[x].type}</h5>
-        </div>
-        <div class="card-body">
+let card = (
+`<div class="card">
+    <div class="card-header bg-transparent border-success">
+        <h5 class="card-title">${answersArray[x].name}</h5>
+        <h5 class="card-text">${answersArray[x].type}</h5>
+    </div>
+    <div class="card-body">
             <p class="card-text">ID: ${answersArray[x].id} </p>
-            <p class="card-text">Email: <a>${answersArray[x].email} </p>
-            <p class="card-text">${answersArray[x].school} ${answersArray[x].officeNumber} <a>${answersArray[x].github}</a> </p>
-        </div>
-        </div>`);
+            <p class="card-text">Email: <a href="${answersArray[x].email}">${answersArray[x].email}</a>  </p>
+            <p class="card-text">${typeBasedCardText}</p>
+    </div></div>`);
+
+//            <p class="card-text">${answersArray[x].school} ${answersArray[x].officeNumber} <a>${answersArray[x].github}</a> </p>
         //cardsArray.push(card);
-        newHTML = newHTML + card;
+        //newHTML = newHTML + card;
         cardsArray.push(card);
     }
     //console.log("new html", newHTML);
     //console.log(htmlTemplate + newHTML);
-    var finalHTML = htmlTemplate + newHTML + closingHTML;
-    //
-    console.log(finalHTML);
 
     //console.log("cards Array ", cardsArray);
     //console.log("html Template ", htmlTemplate);
 
+    const closingHTML = (`</div></body></html>`);
 
-        try {
+    cardsArray.forEach(element => { newHTML += element});
+
+    var finalHTML = htmlTemplate.concat(newHTML, closingHTML);
+    console.log(finalHTML);
+
+    try {
         const data = fs.writeFileSync('dist/index.html', finalHTML)
-        } catch (err) {
+    } catch (err) {
         console.error(err)
-        }
+    }
 
 //    answersArray.forEach(person => {
       //  console.log("person", person);
