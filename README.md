@@ -10,8 +10,8 @@ Because this application won’t be deployed, you’ll need to provide a link to
 - [Description](#Description)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [UserStory](#User Story)
-- [AcceptanceCriteria](#Acceptance Criteria)
+- [UserStory](#UserStory)
+- [AcceptanceCriteria](#AcceptanceCriteria)
 - [Mock-Up](#Mock-Up)
 - [Video](#Video)
 - [Sample](#Sample)
@@ -27,13 +27,13 @@ npm i
 node index.js
 ```
 
-## User Story
+## UserStory
 
 ```md
 AS A manager I WANT to generate a webpage that displays my team's basic info SO THAT I have quick access to their emails and GitHub profiles
 ```
 
-## Acceptance Criteria
+## AcceptanceCriteria
 
 ```md
 GIVEN a command-line application that accepts user input
