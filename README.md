@@ -65,9 +65,9 @@ tests/			         jest tests
   Engineer.test.js
   Intern.test.js
   Manager.test.js
-dist/          rendered output (HTML) and CSS style sheet
+dist/          rendered output (HTML)
 lib/				   classes
-src/				   template helper code
+src/				   Html template
 index.js			 runs the application
 ```
 
