@@ -81,11 +81,11 @@ The application must include `Employee`, `Manager`, `Engineer`, and `Intern` cla
 
 [X] A sample HTML file generated using the application must be submitted.
 [X] Your GitHub repository containing your application code.
-[] A walkthrough video that demonstrates the functionality of the Team Profile Generator and passing tests must be submitted, and a link to the video should be included in your README file.
-[] The walkthrough video must show all four tests passing from the command line.
-[] The walkthrough video must demonstrate how a user would invoke the application from the command line.
-[] The walkthrough video must demonstrate how a user would enter responses to all of the prompts in the application.
-[] The walkthrough video must demonstrate a generated HTML file that matches the user input.
+[X] A walkthrough video that demonstrates the functionality of the Team Profile Generator and passing tests must be submitted, and a link to the video should be included in your README file.
+[X] The walkthrough video must show all four tests passing from the command line.
+[X] The walkthrough video must demonstrate how a user would invoke the application from the command line.
+[X] The walkthrough video must demonstrate how a user would enter responses to all of the prompts in the application.
+[X] The walkthrough video must demonstrate a generated HTML file that matches the user input.
 [X] A walkthrough video that demonstrates the functionality of the application and passing tests.
 [X] Uses the [Inquirer package](https://www.npmjs.com/package/inquirer).
 [X] Uses the [Jest package](https://www.npmjs.com/package/jest) for a suite of unit tests.
