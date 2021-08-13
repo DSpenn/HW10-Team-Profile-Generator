@@ -51,11 +51,15 @@ WHEN I decide to finish building my team THEN I exit the application, and the HT
 
 The following image shows a mock-up of the generated HTML’s appearance and functionality:
 ![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/10-object-oriented-programming-homework-demo.png)
-The styling in the image is just an example, so feel free to add your own.
 
 ## Video
 
+
+
+
 ## Sample
+![https://github.com/DSpenn/HW10-Team-Profile-Generator/blob/main/dist/index.html](./dist/index.html)
+https://github.com/DSpenn/HW10-Team-Profile-Generator/blob/main/dist/index.html
 
 
 ## DirectoryStructure
