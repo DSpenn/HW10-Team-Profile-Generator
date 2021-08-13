@@ -59,6 +59,7 @@ The styling in the image is just an example, so feel free to add your own.
 
 
 ## DirectoryStructure
+```md
 tests/			         jest tests
   Employee.test.js
   Engineer.test.js
@@ -68,9 +69,10 @@ dist/          rendered output (HTML) and CSS style sheet
 lib/				   classes
 src/				   template helper code
 index.js			 runs the application
+```
 
 ## GradingRequirements
-
+```md
 The application must include `Employee`, `Manager`, `Engineer`, and `Intern` classes. The tests for these classes (in the `_tests_` directory) must ALL pass.
 [X] `Employee` parent class with the following properties and methods: `name` * `id` * `email` * `getName()` * `getId()` * `getEmail()` * `getRole()`
 [X] `Manager` will also have the following: In addition to `Employee`'s properties and methods, [] `officeNumber` * `getRole() 
@@ -95,3 +97,4 @@ The application must include `Employee`, `Manager`, `Engineer`, and `Intern` cla
 [X] A walkthrough video that demonstrates the functionality of the application and passing tests.
 [X] A sample HTML file generated using your application.
 [X] The URL of the GitHub repository, with a unique name and a readme describing the project.
+```
