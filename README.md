@@ -53,7 +53,7 @@ The following image shows a mock-up of the generated HTML’s appearance and fun
 ![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/10-object-oriented-programming-homework-demo.png)
 
 ## Video
-[![Walkthrough Video]](../Assets/Vid.mp4)
+[![Walkthrough Video]](https://user-images.githubusercontent.com/84486941/129303076-232a06f0-c0ca-4a38-a6e4-4775baf91b28.mp4)
 
 ## Sample
 [https://github.com/DSpenn/HW10-Team-Profile-Generator/blob/main/dist/index.html](https://github.com/DSpenn/HW10-Team-Profile-Generator/blob/main/dist/index.html)
