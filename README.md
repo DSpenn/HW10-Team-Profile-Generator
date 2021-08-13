@@ -54,13 +54,12 @@ The following image shows a mock-up of the generated HTML’s appearance and fun
 
 ## Video
 
-
-
+![Walkthrough Video](../Assets/Vid.mp4)
 
 ## Sample
-![https://github.com/DSpenn/HW10-Team-Profile-Generator/blob/main/dist/index.html](./dist/index.html)
-https://github.com/DSpenn/HW10-Team-Profile-Generator/blob/main/dist/index.html
+[https://github.com/DSpenn/HW10-Team-Profile-Generator/blob/main/dist/index.html](https://github.com/DSpenn/HW10-Team-Profile-Generator/blob/main/dist/index.html)
 
+[index.html](../blob/master/dist/index.html)
 
 ## DirectoryStructure
 ```md
@@ -90,6 +89,7 @@ The application must include `Employee`, `Manager`, `Engineer`, and `Intern` cla
 [] The walkthrough video must demonstrate how a user would invoke the application from the command line.
 [] The walkthrough video must demonstrate how a user would enter responses to all of the prompts in the application.
 [] The walkthrough video must demonstrate a generated HTML file that matches the user input.
+[X] A walkthrough video that demonstrates the functionality of the application and passing tests.
 [X] Uses the [Inquirer package](https://www.npmjs.com/package/inquirer).
 [X] Uses the [Jest package](https://www.npmjs.com/package/jest) for a suite of unit tests.
 [X] The application must have `Employee`, `Manager`, `Engineer`, and `Intern` classes.
@@ -98,7 +98,6 @@ The application must include `Employee`, `Manager`, `Engineer`, and `Intern` cla
 [X] Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
 [X] Repository contains multiple descriptive commit messages.
 [X] Repository contains a high-quality readme with description and a link to a walkthrough video.
-[X] A walkthrough video that demonstrates the functionality of the application and passing tests.
 [X] A sample HTML file generated using your application.
 [X] The URL of the GitHub repository, with a unique name and a readme describing the project.
 ```
