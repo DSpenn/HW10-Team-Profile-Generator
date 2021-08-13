@@ -2,21 +2,20 @@
 
 ## Description
 
-Application uses [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. 
-Your task is to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Testing is key to making code maintainable, so you’ll also write a unit test for every part of your code and ensure that it passes each test.
-Because this application won’t be deployed, you’ll need to provide a link to a walkthrough video that demonstrates its functionality and all of the tests passing. You’ll need to submit a link to the video AND add it to the readme of your project.
+A Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
+Application uses [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user.
 
 ## Table of Contents
 - [Description](#Description)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [UserStory](#UserStory)
-- [AcceptanceCriteria](#AcceptanceCriteria)
+- [UserStory](#User-Story)
+- [AcceptanceCriteria](#Acceptance-Criteria)
 - [Mock-Up](#Mock-Up)
 - [Video](#Video)
 - [Sample](#Sample)
-- [DirectoryStructure](#DirectoryStructure)
-- [GradingRequirements](#GradingRequirements)
+- [DirectoryStructure](#Directory-Structure)
+- [GradingRequirements](#Grading-Requirements)
 
 ## Installation
 ```bash
@@ -27,13 +26,13 @@ npm i
 node index.js
 ```
 
-## UserStory
+## User-Story
 
 ```md
 AS A manager I WANT to generate a webpage that displays my team's basic info SO THAT I have quick access to their emails and GitHub profiles
 ```
 
-## AcceptanceCriteria
+## Acceptance-Criteria
 
 ```md
 GIVEN a command-line application that accepts user input
@@ -58,7 +57,7 @@ The following image shows a mock-up of the generated HTML’s appearance and fun
 ## Sample
 [https://github.com/DSpenn/HW10-Team-Profile-Generator/blob/main/dist/index.html](https://github.com/DSpenn/HW10-Team-Profile-Generator/blob/main/dist/index.html)
 
-## DirectoryStructure
+## Directory-Structure
 ```md
 tests/			         jest tests
   Employee.test.js
@@ -71,7 +70,7 @@ src/				   Html template
 index.js			 runs the application
 ```
 
-## GradingRequirements
+## Grading-Requirements
 ```md
 The application must include `Employee`, `Manager`, `Engineer`, and `Intern` classes. The tests for these classes (in the `_tests_` directory) must ALL pass.
 [X] `Employee` parent class with the following properties and methods: `name` * `id` * `email` * `getName()` * `getId()` * `getEmail()` * `getRole()`

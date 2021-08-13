@@ -91,10 +91,10 @@ function genHMTL() {
         typeBasedCardText = (`GitHub: <a href="${answersArray[x].github}">${answersArray[x].github}</a>`);
         break;
       case "Intern":
-        typeBasedCardText = (`School:${answersArray[x].school}`);
+        typeBasedCardText = (`School: ${answersArray[x].school}`);
         break;
       case "Manager":
-        typeBasedCardText = (`Office Number:${answersArray[x].officeNumber}`);
+        typeBasedCardText = (`Office Number: ${answersArray[x].officeNumber}`);
         break;
     }
 
